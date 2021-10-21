@@ -32,10 +32,11 @@ public:
                 current = t;                                
             }
         }
-        while(p1!=nullptr){
+        //下面while用错了，应该用if，果然改了之后a完了
+        if(p1!=nullptr){
             current->next=p1;
         }
-        while(p2!=nullptr){
+        ifp2!=nullptr){
             current->next=p2;
         }
         return root->next;
