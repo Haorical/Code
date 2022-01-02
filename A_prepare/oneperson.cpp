@@ -1,0 +1,5 @@
+#include<bits/stdc++.h>
+#define FOR(i,x,y) for(int i=(x);i<=(y);i++)
+#define DOR(i,x,y) for(int i=(x);i>=(y);i--)
+#define Abs(x) ((x>0)?(x):-(x))
+typedef long long LL; using namespace std; LL gcd(LL a,LL b){return b?gcd(b,a%b):a;} void exgcd(LL a,LL b,LL &x,LL &y) { if(!b){x=1,y=0;return;} exgcd(b,a%b,y,x);y-=a/b*x; } bool Exgcd(LL &A,LL &k1,LL &B,LL &k2,LL C) { LL g=gcd(A,B); if(C%g)return 0; A/=g,B/=g,C/=g; exgcd(A,B,k1,k2); k1*=C,k2*=C; return 1; } int main() { int T; scanf("%d",&T); while(T--) { LL A,B,a,b,k1,k2; scanf("%lld%lld%lld%lld",&A,&B,&a,&b); if(!Exgcd(a,k1,b,k2,B-A)) { printf("-1\n"); continue; } int t=(k2-k1)/(a+b); LL ans=1e15; FOR(i,t-1,t+1) { LL k_1=k1+b*i,k_2=k2-a*i; if(Abs(k_1+k_2)==Abs(k_1)+Abs(k_2)) ans=min(ans,max(Abs(k_1),Abs(k_2))); else ans=min(ans,Abs(k_1)+Abs(k_2)); } printf("%lld\n",ans); }}

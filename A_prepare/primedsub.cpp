@@ -1,0 +1,4 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int maxm=1e4+5;int isprime[maxm];int prime[maxm];int cnt=0;void init(){for(int i=2;i<maxm;i++){isprime[i]=1;}for(int i=2;i<maxm;i++){if(isprime[i]){prime[cnt++]=i;for(int j=i+i;j<maxm;j+=i){isprime[j]=0;}}}}int judge(int x){ if(x<maxm){return isprime[x];}else{for(int i=0;i<cnt;i++){if(x%prime[i]==0){return 0;}}return 1;}}int main(){init();int T;scanf("%d",&T);while(T--){int n;int a[maxm];int add[maxm];scanf("%d",&n);add[0]=0;for(int i=1;i<=n;i++){scanf("%d",&a[i]);add[i]=a[i];if(i-1)add[i]+=add[i-1];}int ok=0;for(int j=2;j<=n-2;j++){for(int i=1;i+j-1<=n;i++){int sum=add[i+j-1]-add[i-1];if(judge(sum)){printf("Shortest primed subsequence is length %d:",j);for(int k=i;k<i+j;k++){printf(" %d",a[k]);}printf("\n");ok=1;break;}}if(ok)break;}if(!ok){printf("This sequence is anti-primed.\n");}}}
+

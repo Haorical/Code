@@ -27,7 +27,6 @@ int main(){
         }
         for(int i=1;i<=n;i++){
             if(win[i]+loss[i]) {
-                //cout<<win[i]<<" "<<loss[i]<<endl;
                 printf("%.3f\n",1.0*win[i]/(win[i]+loss[i]));
             }
             else printf("-\n");

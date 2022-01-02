@@ -1,0 +1,3 @@
+#include<bits/stdc++.h>
+using namespace std;
+int extend_gcd(int a,int b,int &x0,int &y0,int &d){if(b==0){x0=1,y0=0;return a;}d=extend_gcd(b,a%b,x0,y0,d);int t=x0;x0=y0;y0=t-a/b*y0;return d;}int main(){int a,b,c,d;while(scanf("%d%d%d",&a,&b,&c),a|b|c){int x0,y0,d,i,flag=0;if(a<b){flag=1;swap(a,b);}d=extend_gcd(a,b,x0,y0,d);x0=x0*(c/d);y0=y0*(c/d);int t=y0/(a/d),minans=INT_MAX,u,v;for(i=t-1;i<=t+1;i++){int x=x0+b/d*i;int y=y0-a/d*i;if(abs(x)+abs(y)<minans){minans=abs(x)+abs(y);u=abs(x);v=abs(y);}}if(flag) printf("%d %d\n",v,u);else printf("%d %d\n",u,v);}}

@@ -1,0 +1,3 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+int main(){int a[1010],b[1010],n;while(cin>>n){if(n==0) break;for(int i=1;i<=n;i++)cin>>a[i];for(int i=1;i<=n;i++)cin>>b[i];sort(a+1,a+n+1);sort(b+1,b+n+1);int t1=1,tr=n,q1=1,qr=n;int sum=0;while(t1<=tr){if(a[t1]<b[q1]){qr--;t1++;sum-=200;}else if(a[t1]>b[q1]){t1++;q1++;sum+=200;}else{while(t1<=tr&&q1<=qr){if(a[tr]>b[qr]){tr--;qr--;sum+=200;}else{if(a[t1]<b[qr])sum-=200;t1++;qr--;break;}}}}cout<<sum<<endl;}}

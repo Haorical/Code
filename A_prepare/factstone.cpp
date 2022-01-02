@@ -58,22 +58,5 @@ int main(){
 
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-    int y;
-    while(cin>>y){
-        if(y==0) break;
-        double w=log(4.0);
-        for(int i=1960;i<=y;i+=10){
-            w*=2;
-        }
-        double f=0;
-        int i=1;
-        while(f<w){
-            f+=log(double(++i));
-        }
-        cout<<i-1<<endl;
-    }
-    system("pause");
-    return 0;
-}
+int main(){int y;while(cin>>y){if(y==0) break;double w=log(4.0);for(int i=1960;i<=y;i+=10)w*=2;double f=0;int i=1;while(f<w)f+=log(double(++i));cout<<i-1<<endl;}}
 // double i-1 都是<
