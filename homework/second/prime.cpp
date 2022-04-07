@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 
-
-int u[1000002];
-int su[1000002];
+int u[100000002];
+int su[100000002];
 
 // 埃氏筛
 int as(int n){
@@ -44,15 +44,14 @@ void os(int n){
 }
 
 
-int main(){
+signed main(){
     memset(su, 0, sizeof(su));
-    os(10);
+    os(100000000);
     int cnt = 0;
     for(int i = 1; su[i]; i++) {
-        cout<<su[i]<<endl;
+        //cout<<su[i]<<endl;
         cnt++;
     }
     cout<<cnt;
     system("pause");
-    return 0;
 }

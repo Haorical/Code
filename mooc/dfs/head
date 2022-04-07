@@ -1,0 +1,65 @@
+// 判断能否走到终点
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     将所有点都标记为新点
+//     起点=1
+//     终点=8
+//     cout<<dfs(起点)
+// }
+
+// bool dfs(v){
+//     if(v为终点) return true;
+//     if(v为旧点) return false;
+//     将v标记为旧点；
+//     对和v相邻的每个节点u{
+//         if(dfs(u)==true) return true;
+//     }
+//     return false;
+// }
+
+// 寻找路径
+// Node path[MAX_LEN];
+// int depth;
+// bool dfs(v){
+//     if(v为终点){
+//         path[depth]=v;
+//         return true;
+//     }
+//     if(v为旧点) return false;
+//     标记旧点
+//     path[depth]=v;
+//     ++depth;
+//     对相邻节点u{
+//         if(dfs(u)==true) return true;
+//     }
+//     --depth;
+//     return false;
+// }
+
+// int main(){
+//     新点
+//     depth=0;
+//     if(dfs(起点)){
+//         for(int i=0;i<=depth;++i){
+//             cout<<path[i]<<endl;
+//         }
+//     }
+// }
+
+// 遍历图上节点
+
+// int main(){
+//     标记为新点;
+//     while(在图中能找到新点k)
+//      dfs(k);
+// }
+
+// dfs(v){
+//     if(v是旧点) return;
+//     将v标记为旧点；
+//     相邻的u{
+//         dfs(u);
+//     }
+// }
+
