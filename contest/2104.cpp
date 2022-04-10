@@ -10,12 +10,12 @@ int main(){
         n--;
         int a=1,b=1,c;
         while(n--){
-            c=a+b;
+            c=(a+b)%1000000007;
             b=a;
             a=c;
         }
         cout<<c<<endl;
     }
-    system("pause");
+    //system("pause");
     return 0;
 }
