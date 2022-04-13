@@ -4,6 +4,7 @@ const int MAXN=100000+10;
 struct Node{
     int s,e;
 }node[MAXN];
+//贪心，最早结束
 bool cmp(Node x,Node y){
     return x.e<y.e;
 }
@@ -21,7 +22,7 @@ int main(){
                 if(node[i].e>r) break;
                 if(node[i].s>=l){
                     ans++;
-                    l=node[i].e;
+                    l=node[i].e; //非常巧妙
                 }
             }
             cout<<ans<<endl;
